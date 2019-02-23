@@ -1,4 +1,4 @@
-#variable-----
+#variables-----
 light_switched = False
 has_small_key = False
 has_large_key = False
