@@ -41,7 +41,7 @@ def enter_from_center(number):
         number= input("Select which number door you would like to go through") 
         enter_from_center(number)
 
-def room_1():
+def room_1(): #pick up small key
     global has_small_key
     print("You are in a green room.")
     entered_room[1] = True 
@@ -68,7 +68,7 @@ def exit_room(command):
         command = input("Type exit to exit the room")
         exit_room(command)
 
-def room_2():
+def room_2(): #use large key to unlock this room
     global has_large_key
     if has_large_key == True:
         entered_room[2] = True
@@ -79,7 +79,7 @@ def room_2():
         print("The door is locked. You need a large key to enter.")  
         center()
 
-def room_3():
+def room_3(): #after light switch is pulled, you will be able to see in this room
     global light_switched
     entered_room[3] = True
     if light_switched == True:
@@ -89,7 +89,7 @@ def room_3():
     command = input("Type exit to exit the room")
     exit_room(command)
     
-def room_4():
+def room_4():#after light switch is pulled, you will be able to see in this room
     global light_switched
     entered_room[4] = True
     if light_switched == True:
@@ -105,7 +105,7 @@ def room_5():
     command = input("Type exit to exit the room")
     exit_room(command) 
     
-def room_6():
+def room_6(): #has light switch that turns room 3 and 4 on, and room 8 off
     global light_switched
     entered_room[6] = True
     print("You are in a blue room. You see a")
@@ -124,7 +124,7 @@ def room_6():
     else:
         center() 
     
-def room_7(): #has a locked box with another key to rm 2
+def room_7(): #has a locked box with large key to room 2, use small key to open box
     global has_small_key
     global has_large_key
     entered_room[7] = True
@@ -162,8 +162,8 @@ def room_7(): #has a locked box with another key to rm 2
     else: 
         center()  
 
-#this room gets dark when switch is flipped    
-def room_8():
+  
+def room_8(): #this room gets dark when switch is flipped, contains only entrance to room 9
     global light_switched
     entered_room[8] = True
     if light_switched == True:
@@ -181,7 +181,7 @@ def room_8():
         else:
             center()
     
-def room_9(): 
+def room_9(): #can only be entered through room 8. door 9 does not unlock
     entered_room[9] = True
     print("You are in a red room. There is a door on the south wall.")
     command = input("Type exit to exit the room or south to go through the door")
